@@ -52,6 +52,18 @@ public class ResourceCentreTest {
 	public void testAddChromebook() {
 		//fail("Not yet implemented");
 		// write your code here
+		assertNotNull("Test if there is a valid Chromebook arraylist to add to", chromebookList);
+		
+		//Given an empty list, after adding 1 item, the size of the list is 1
+		ResourceCentre.addChromebook(chromebookList, cb1);		
+		assertEquals("Test if that Chromebook arraylist size is 1?", 1, chromebookList.size());
+		
+		//The item just added is as same as the first item of the list
+		assertSame("Test that Chromebook is added same as 1st item of the list?", cc1, chromebookList.get(0));
+		
+		//Add another item. test The size of the list is 2?
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		assertEquals("Test that Chromebook arraylist size is 2?", 2, chromebookList.size());
 	}
 	
 	@Test
@@ -89,6 +101,57 @@ public class ResourceCentreTest {
 		//fail("Not yet implemented");
 		// write your code here
 		
+		//////////////
+		// boundary //
+		//////////////
+		
+		// Test if Item list is not null but empty
+			// null means non existing
+			// empty means list exists but has nothing inside
+
+		
+		//add a camcorder cc1
+			// so we can loan it out
+		
+		
+		//////////////
+		//  normal  //
+		//////////////
+		
+		// Test if can loan out the camcorder added
+		// STEP1: Retrieve item added
+			// HINT1-1: reference the ResourceCentre.doLoanCamcorder method to understand the input parameters required
+			// HINT1-2: does the ResourceCentre.doLoanCamcorder method has a return value? If so, what do you need to do?
+			// HINT1-3: What is public static boolean?
+		// STEP2: From item retrieved, test if item is available for loan
+			// HINT2-1: which assertion method to use?
+			// HINT2-2: link STEP 1 and STEP 2
+		
+
+		//////////////
+		//  error   //
+		//////////////
+		
+		// STEP3: Retrieve item added like above
+		// STEP4: Test if item is not available for loan
+			// HINT4-1: which assertion method to use?
+		
+
+		//////////////
+		//  error   //
+		//////////////
+		
+		// STEP5: add camcorder cc2
+		// STEP6: use setIsAvailable and force it to be false
+		// STEP7: test loan cc2
+		
+		//////////////
+		//  error   //
+		//////////////
+		
+		// STEP8: test loan a non existing item
+		// HINT8-1: do not add and straight away loan out
+		
 	}
 	
 	@Test
@@ -101,6 +164,42 @@ public class ResourceCentreTest {
 	public void testDoReturnCamcorder() {
 		//fail("Not yet implemented");
 		// write your code here
+		
+		//////////////
+		// boundary //
+		//////////////
+		
+		// Test if Item list is not null but empty
+			// null means non existing
+			// empty means list exists but has nothing inside
+
+		
+		//add a camcorder cc1
+		
+
+		//////////////
+		//  error   //
+		//////////////
+		
+		// Test that camcorder CC001 that has status available can be returned
+		
+		
+		//////////////
+		//  normal  //
+		//////////////
+		
+		// add a camcorder cc2
+		// set it to not available (i.e. onloan)
+		// test if camcorder CC0012 that is onloan can be returned
+
+		
+		//////////////
+		//  error   //
+		//////////////
+		
+		// Test that a non existing camcorder CC0013 can be returned
+		
+		
 		
 	}
 	@Test
